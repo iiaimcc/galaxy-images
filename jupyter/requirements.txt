@@ -1,0 +1,12 @@
+jupyterlab-git
+jupyterlab-lsp
+python-lsp-server
+python-lsp-ruff
+jupyter-archive
+ipywidgets
+jupyterlab_widgets
+jupyter-ai
+calkit
+ruff
+jupyter-resource-usage
+itables
