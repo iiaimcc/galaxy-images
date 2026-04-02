@@ -21,10 +21,17 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/galaxy-interactive-qiskit-jupyter
+          tags: |
+            type=sha
+            type=raw,value=latest,enable={{is_default_branch}}
       - uses: docker/build-push-action@v6
         with:
           context: ./qiskit-jupyter
           file: ./qiskit-jupyter/Dockerfile
           push: true
           platforms: linux/amd64
-          tags: ghcr.io/${{ github.repository_owner }}/galaxy-interactive-qiskit-jupyter:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
