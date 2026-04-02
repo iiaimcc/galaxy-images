@@ -6,7 +6,6 @@ jupyter-archive
 ipywidgets
 jupyterlab_widgets
 jupyter-ai
-calkit
 ruff
 jupyter-resource-usage
 itables
